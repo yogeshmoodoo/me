@@ -15,4 +15,4 @@ A Maven scan failed during taint analysis with an `IllegalArgumentException`, "6
 I reported it on the SonarSource community forum on 23 July 2025.
 
 ## Outcome
-SonarSource identified the cause and, on 29 August 2025, confirmed a fix deployed to SonarQube Cloud. See the [blog post](/blog/sonarqube-cloud-taint-analysis-error) for details.
+SonarSource identified the cause and, on 29 August 2025, confirmed a fix deployed to SonarQube Cloud. See the [blog post](/me/blog/sonarqube-cloud-taint-analysis-error) for details.

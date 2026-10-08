@@ -15,4 +15,4 @@ links:
 I raised the issue in August 2017 and asked for the two overrides to be removed so the standard behaviour is restored.
 
 ## Outcome
-The issue was still open when I last checked. See the [blog post](/blog/liquibase-hibernate-default-schema) for details.
+The issue was still open when I last checked. See the [blog post](/me/blog/liquibase-hibernate-default-schema) for details.

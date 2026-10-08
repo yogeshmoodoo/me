@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import PostCard from '../components/PostCard.astro';
-import { SITE } from '../consts';
+import { SITE, withBase } from '../consts';
 const projects = (await getCollection('projects', (p) => p.data.featured)).slice(0, 3);
 const posts = (await getCollection('blog', (p) => !p.data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -14,7 +14,7 @@ const posts = (await getCollection('blog', (p) => !p.data.draft))
     <p class="label">whoami</p>
     <h1>{SITE.name}<span class="cursor" aria-hidden="true">_</span></h1>
     <p>{SITE.title} at iQera, Mauritius. Java, Spring and Hibernate, building enterprise platforms.</p>
-    <p><a href="/about">About &amp; CV</a> · <a href="/contact">Contact</a></p>
+    <p><a href={withBase('/about')}>About &amp; CV</a> · <a href={withBase('/contact')}>Contact</a></p>
   </section>
   <section>
     <h2 class="label">projects</h2>

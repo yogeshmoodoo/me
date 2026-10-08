@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Assumes a `ymoodoo.github.io` repo, so no `base` is needed.
+// Project site: the GitHub repo is `me`, so it is served from /me.
 export default defineConfig({
-  site: 'https://ymoodoo.github.io',
+  site: 'https://yogeshmoodoo.github.io',
+  base: '/me',
   integrations: [sitemap()],
 });

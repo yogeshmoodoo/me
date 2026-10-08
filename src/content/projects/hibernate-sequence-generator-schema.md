@@ -15,4 +15,4 @@ With Hibernate 5.0.12 on PostgreSQL 9.6 (Spring Boot 1.5.4), the `schema` attrib
 I found and reported the bug in the Hibernate issue tracker.
 
 ## Outcome
-The issue was still open when I last checked. See the [blog post](/blog/hibernate-sequence-generator-schema) for details.
+The issue was still open when I last checked. See the [blog post](/me/blog/hibernate-sequence-generator-schema) for details.

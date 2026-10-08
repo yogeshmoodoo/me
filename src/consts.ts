@@ -30,3 +30,6 @@ export const OPEN_SOURCE = [
     url: 'https://community.sonarsource.com/t/taint-analysis-was-interrupted-because-of-an-unexpected-error/144917',
   },
 ];
+
+/** Prefix a root-absolute path with the configured `base` (the site is served from /me). */
+export const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + path;

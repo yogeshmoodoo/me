@@ -1,12 +1,12 @@
 ---
-import { SITE } from '../consts';
+import { SITE, withBase } from '../consts';
 const links = [['/projects', 'projects'], ['/about', 'about'], ['/blog', 'blog'], ['/contact', 'contact']];
 ---
 <header>
   <div class="container bar">
-    <a href="/" class="brand">&gt; {SITE.name}</a>
+    <a href={withBase('/')} class="brand">&gt; {SITE.name}</a>
     <nav aria-label="Main">
-      {links.map(([href, name]) => <a href={href}>{name}</a>)}
+      {links.map(([href, name]) => <a href={withBase(href)}>{name}</a>)}
     </nav>
   </div>
 </header>
