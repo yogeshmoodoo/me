@@ -24,4 +24,4 @@ No test or lint tooling is set up.
 
 - Dark by default, terminal-green accent (`--accent`), monospace headings and labels (`.label` adds the `~/` prefix), sans body text.
 - iQera work (debt-collection platform, dsosuite) is likely proprietary. Featured projects must be non-confidential. The current projects are the three public open-source reports (each has a matching blog post); add real project files alongside them.
-- Still missing: `public/resume.pdf` (not linked yet), an OG image, and non-open-source projects.
+- Still missing: `public/resume.pdf` (not linked yet) and non-open-source projects.

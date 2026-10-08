@@ -6,7 +6,7 @@ const posts = (await getCollection('blog', (p) => !p.data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
-<Base title="Blog" description="Notes on Java, Spring and Hibernate.">
-  <h1 class="label">blog</h1>
-  {posts.map((p) => <PostCard slug={p.id} {...p.data} />)}
+<Base title="Blog" description="Notes by Yogesh Moodoo on Java, Spring and Hibernate: bugs found in open-source tooling, how they were reproduced and what the maintainers did.">
+  <h1 class="label">blog: Java, Spring and Hibernate</h1>
+  {posts.map((p) => <PostCard slug={p.id} heading="h2" {...p.data} />)}
 </Base>

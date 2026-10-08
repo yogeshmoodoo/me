@@ -8,8 +8,18 @@ const projects = (await getCollection('projects', (p) => p.data.featured)).slice
 const posts = (await getCollection('blog', (p) => !p.data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.name,
+  jobTitle: SITE.title,
+  worksFor: { '@type': 'Organization', name: 'iQera' },
+  address: { '@type': 'PostalAddress', addressCountry: 'MU' },
+  url: new URL(withBase('/'), Astro.site).href,
+  sameAs: [SITE.linkedin, SITE.github],
+};
 ---
-<Base>
+<Base jsonLd={personLd}>
   <section>
     <p class="label">whoami</p>
     <h1>{SITE.name}<span class="cursor" aria-hidden="true">_</span></h1>

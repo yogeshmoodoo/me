@@ -1,9 +1,9 @@
 ---
 import { withBase } from '../consts';
-const { slug, title, summary, stack } = Astro.props;
+const { slug, title, summary, stack, heading: Heading = 'h3' } = Astro.props;
 ---
 <article class="card">
-  <h3><a href={withBase(`/projects/${slug}`)}>{title}</a></h3>
+  <Heading><a href={withBase(`/projects/${slug}`)}>{title}</a></Heading>
   <p>{summary}</p>
   <p class="tags">{stack.join(' · ')}</p>
 </article>

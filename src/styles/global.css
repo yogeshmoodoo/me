@@ -18,7 +18,7 @@ main { padding-top: 2rem; padding-bottom: 4rem; }
 .label { font-family: var(--mono); color: var(--accent); }
 .label::before { content: '~/'; color: var(--muted); }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
-.card h3 { margin: 0 0 .25rem; }
+.card h2, .card h3 { margin: 0 0 .25rem; font-size: 1.17rem; }
 .tags { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
 .cursor { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }

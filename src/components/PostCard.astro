@@ -1,9 +1,9 @@
 ---
 import { withBase } from '../consts';
-const { slug, title, description, date } = Astro.props;
+const { slug, title, description, date, heading: Heading = 'h3' } = Astro.props;
 ---
 <article class="card">
-  <h3><a href={withBase(`/blog/${slug}`)}>{title}</a></h3>
+  <Heading><a href={withBase(`/blog/${slug}`)}>{title}</a></Heading>
   <p class="tags"><time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time></p>
   <p>{description}</p>
 </article>
