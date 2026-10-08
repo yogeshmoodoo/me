@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../consts';
+---
+<Base title="Contact" description="How to reach Yogesh Moodoo.">
+  <h1 class="label">contact</h1>
+  <ul>
+    <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+    <li>LinkedIn: <a href={SITE.linkedin} rel="me noopener">yogesh-moodoo</a></li>
+    <li>GitHub: <a href={SITE.github} rel="me noopener">yogeshmoodoo</a></li>
+  </ul>
+</Base>

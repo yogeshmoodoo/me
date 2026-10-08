@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+const projects = await getCollection('projects');
+---
+<Base title="Projects" description="Selected projects.">
+  <h1 class="label">projects</h1>
+  {projects.map((p) => <ProjectCard slug={p.id} {...p.data} />)}
+</Base>

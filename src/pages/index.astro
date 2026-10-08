@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PostCard from '../components/PostCard.astro';
+import { SITE } from '../consts';
+const projects = (await getCollection('projects', (p) => p.data.featured)).slice(0, 3);
+const posts = (await getCollection('blog', (p) => !p.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+<Base>
+  <section>
+    <p class="label">whoami</p>
+    <h1>{SITE.name}<span class="cursor" aria-hidden="true">_</span></h1>
+    <p>{SITE.title} at iQera, Mauritius. Java, Spring and Hibernate, building enterprise platforms.</p>
+    <p><a href="/about">About &amp; CV</a> · <a href="/contact">Contact</a></p>
+  </section>
+  <section>
+    <h2 class="label">projects</h2>
+    {projects.map((p) => <ProjectCard slug={p.id} {...p.data} />)}
+  </section>
+  <section>
+    <h2 class="label">blog</h2>
+    {posts.map((p) => <PostCard slug={p.id} {...p.data} />)}
+  </section>
+  <section>
+    <h2 class="label">contact</h2>
+    <p>Get in touch at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+  </section>
+</Base>

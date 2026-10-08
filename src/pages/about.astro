@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, TIMELINE, OPEN_SOURCE } from '../consts';
+---
+<Base title="About" description="About Yogesh Moodoo, career timeline and open-source contributions.">
+  <h1 class="label">about</h1>
+  <p>
+    I am {SITE.name}, a {SITE.title} at iQera in Mauritius since July 2018. I hold a BSc in Information Systems
+    (First Class, University of Mauritius, 2003) and ITIL V3 certification, and I speak English and French.
+  </p>
+  <h2 class="label">timeline</h2>
+  <p>Full history on <a href={SITE.linkedin} rel="me noopener">LinkedIn</a>.</p>
+  <ul>
+    {TIMELINE.map((t) => <li><strong>{t.period}</strong>: {t.role}, {t.org}</li>)}
+  </ul>
+  <h2 class="label">open-source</h2>
+  <ul>
+    {OPEN_SOURCE.map((o) => <li><a href={o.url} rel="noopener">{o.title}</a></li>)}
+  </ul>
+</Base>

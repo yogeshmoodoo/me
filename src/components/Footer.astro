@@ -1,0 +1,15 @@
+---
+import { SITE } from '../consts';
+---
+<footer>
+  <div class="container">
+    <span>&copy; {new Date().getFullYear()} {SITE.name}</span>
+    <a href={SITE.linkedin} rel="me noopener">LinkedIn</a>
+    <a href={SITE.github} rel="me noopener">GitHub</a>
+    <a href={`mailto:${SITE.email}`}>Email</a>
+  </div>
+</footer>
+<style>
+  footer { border-top: 1px solid var(--border); padding: 1.5rem 0; color: var(--muted); font-size: .9rem; }
+  .container { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+</style>

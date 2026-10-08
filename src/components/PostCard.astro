@@ -1,0 +1,8 @@
+---
+const { slug, title, description, date } = Astro.props;
+---
+<article class="card">
+  <h3><a href={`/blog/${slug}`}>{title}</a></h3>
+  <p class="tags"><time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time></p>
+  <p>{description}</p>
+</article>

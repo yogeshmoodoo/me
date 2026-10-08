@@ -1,0 +1,20 @@
+---
+import { SITE } from '../consts';
+const links = [['/projects', 'projects'], ['/about', 'about'], ['/blog', 'blog'], ['/contact', 'contact']];
+---
+<header>
+  <div class="container bar">
+    <a href="/" class="brand">&gt; {SITE.name}</a>
+    <nav aria-label="Main">
+      {links.map(([href, name]) => <a href={href}>{name}</a>)}
+    </nav>
+  </div>
+</header>
+<style>
+  header { border-bottom: 1px solid var(--border); }
+  .bar { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between; padding-block: 1rem; font-family: var(--mono); }
+  .brand { text-decoration: none; font-weight: 700; }
+  nav { display: flex; gap: 1.25rem; }
+  nav a { color: var(--text); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+</style>

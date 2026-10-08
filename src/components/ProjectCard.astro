@@ -1,0 +1,8 @@
+---
+const { slug, title, summary, stack } = Astro.props;
+---
+<article class="card">
+  <h3><a href={`/projects/${slug}`}>{title}</a></h3>
+  <p>{summary}</p>
+  <p class="tags">{stack.join(' · ')}</p>
+</article>
