@@ -6,5 +6,7 @@ const projects = await getCollection('projects');
 ---
 <Base title="Projects" description="Open-source bug reports by Yogesh Moodoo against Hibernate, liquibase-hibernate and SonarQube Cloud, with the stack, outcome and links for each.">
   <h1 class="label">projects: open-source bug reports</h1>
-  {projects.map((p) => <ProjectCard slug={p.id} heading="h2" {...p.data} />)}
+  <div class="grid">
+    {projects.map((p) => <ProjectCard slug={p.id} heading="h2" {...p.data} />)}
+  </div>
 </Base>

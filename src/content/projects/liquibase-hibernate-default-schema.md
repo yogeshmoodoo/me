@@ -1,11 +1,12 @@
 ---
-title: liquibase-hibernate5 #160, wrong default schema and catalog
+title: "liquibase-hibernate5 #160, wrong default schema and catalog"
 summary: Reported that liquibase-hibernate5 3.6 returns "HIBERNATE" as the default schema and catalog name.
 stack: [Liquibase, Hibernate 5, Java]
 role: Reporter
 featured: true
+status: open
 links:
-  - label: Issue #160 on GitHub
+  - label: "Issue #160 on GitHub"
     url: https://github.com/liquibase/liquibase-hibernate/issues/160
 ---
 ## Problem

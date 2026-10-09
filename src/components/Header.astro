@@ -1,20 +1,26 @@
 ---
 import { SITE, withBase } from '../consts';
 const links = [['/projects', 'projects'], ['/about', 'about'], ['/blog', 'blog'], ['/contact', 'contact']];
+const path = Astro.url.pathname.replace(/\/$/, '');
+const isActive = (href: string) => path === withBase(href) || path.startsWith(withBase(href) + '/');
 ---
 <header>
   <div class="container bar">
     <a href={withBase('/')} class="brand">&gt; {SITE.name}</a>
     <nav aria-label="Main">
-      {links.map(([href, name]) => <a href={withBase(href)}>{name}</a>)}
+      {links.map(([href, name]) => <a href={withBase(href)} aria-current={isActive(href) ? 'page' : undefined}>{name}</a>)}
     </nav>
   </div>
 </header>
 <style>
-  header { border-bottom: 1px solid var(--border); }
-  .bar { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between; padding-block: 1rem; font-family: var(--mono); }
-  .brand { text-decoration: none; font-weight: 700; }
-  nav { display: flex; gap: 1.25rem; }
-  nav a { color: var(--text); text-decoration: none; }
-  nav a:hover { color: var(--accent); }
+  header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--border); }
+  .bar { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; padding-block: .9rem; font-family: var(--mono); }
+  .brand { color: var(--heading); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+  .brand:hover { color: var(--accent); }
+  nav { display: flex; gap: 1.5rem; font-size: .9rem; }
+  nav a { position: relative; color: var(--muted); text-decoration: none; padding-block: .25rem; transition: color .2s; }
+  nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+  nav a:hover, nav a[aria-current='page'] { color: var(--heading); }
+  nav a:hover::after, nav a[aria-current='page']::after { transform: scaleX(1); }
+  @media (prefers-reduced-motion: reduce) { nav a::after { transition: none; } }
 </style>

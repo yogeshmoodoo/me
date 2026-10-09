@@ -1,9 +1,14 @@
 ---
 import { withBase } from '../consts';
-const { slug, title, summary, stack, heading: Heading = 'h3' } = Astro.props;
+const { slug, title, summary, stack, role, status, heading: Heading = 'h3' } = Astro.props;
+const statusLabel: Record<string, string> = { fixed: 'fixed by vendor', open: 'open' };
 ---
 <article class="card">
+  <div class="card-meta">
+    {status ? <span class={`status status-${status}`}>{statusLabel[status]}</span> : <span />}
+    <span>{role}</span>
+  </div>
   <Heading><a href={withBase(`/projects/${slug}`)}>{title}</a></Heading>
   <p>{summary}</p>
-  <p class="tags">{stack.join(' · ')}</p>
+  <ul class="chips" aria-label="Stack">{stack.map((s: string) => <li class="chip">{s}</li>)}</ul>
 </article>

@@ -20,22 +20,58 @@ const personLd = {
 };
 ---
 <Base jsonLd={personLd}>
-  <section>
-    <p class="label">whoami</p>
-    <h1>{SITE.name}<span class="cursor" aria-hidden="true">_</span></h1>
-    <p>{SITE.title} at iQera, Mauritius. Java, Spring and Hibernate, building enterprise platforms.</p>
-    <p><a href={withBase('/about')}>About &amp; CV</a> · <a href={withBase('/contact')}>Contact</a></p>
+  <section class="hero">
+    <div>
+      <p class="label label-rule">whoami<span class="rule" aria-hidden="true"></span></p>
+      <h1>{SITE.name}<span class="cursor" aria-hidden="true">_</span></h1>
+      <p class="lead"><strong>{SITE.title}</strong> at iQera, Mauritius. Java, Spring and Hibernate, building enterprise platforms.</p>
+      <div class="actions">
+        <a class="btn" href={`mailto:${SITE.email}`}>Get in touch</a>
+        <a class="btn btn-ghost" href={withBase('/projects')}>See the work</a>
+        <a class="btn btn-ghost" href={withBase('/about')}>About &amp; CV</a>
+      </div>
+    </div>
+    <div class="terminal" role="group" aria-label="Summary">
+      <div class="terminal-bar">yogesh@portfolio: ~</div>
+      <div class="terminal-body">
+        <div class="term-line term-cmd" style="--i:0">whoami</div>
+        <div class="term-line term-out" style="--i:1">yogesh.moodoo</div>
+        <div class="term-line term-cmd" style="--i:2">role</div>
+        <div class="term-line term-out" style="--i:3">senior technical architect <span class="dim">@ iQera</span></div>
+        <div class="term-line term-cmd" style="--i:4">stack --focus</div>
+        <div class="term-line term-out tech" style="--i:5">java · spring · hibernate · postgresql</div>
+        <div class="term-line term-cmd" style="--i:6">upstream --reports</div>
+        <div class="term-line term-out" style="--i:7">3 filed · <span class="ok">1 fixed by vendor</span> · <span class="open">2 open</span></div>
+      </div>
+    </div>
   </section>
-  <section>
-    <h2 class="label">projects</h2>
-    {projects.map((p) => <ProjectCard slug={p.id} {...p.data} />)}
+  <section class="section scroll-reveal">
+    <div class="section-head">
+      <h2 class="label">projects</h2>
+      <a class="more" href={withBase('/projects')}>all projects</a>
+    </div>
+    <div class="grid">
+      {projects.map((p) => <ProjectCard slug={p.id} {...p.data} />)}
+    </div>
   </section>
-  <section>
-    <h2 class="label">blog</h2>
-    {posts.map((p) => <PostCard slug={p.id} {...p.data} />)}
+  <section class="section scroll-reveal">
+    <div class="section-head">
+      <h2 class="label">blog</h2>
+      <a class="more" href={withBase('/blog')}>all posts</a>
+    </div>
+    <div class="posts">
+      {posts.map((p) => <PostCard slug={p.id} {...p.data} />)}
+    </div>
   </section>
-  <section>
-    <h2 class="label">contact</h2>
-    <p>Get in touch at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+  <section class="section scroll-reveal">
+    <div class="cta">
+      <h2 class="label">contact</h2>
+      <p>Questions, collaboration or a conversation about enterprise Java: email or LinkedIn.</p>
+      <div class="actions">
+        <a class="btn" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a class="btn btn-ghost" href={SITE.linkedin} rel="me noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href={SITE.github} rel="me noopener">GitHub</a>
+      </div>
+    </div>
   </section>
 </Base>

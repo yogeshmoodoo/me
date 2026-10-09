@@ -8,13 +8,13 @@ import { SITE, TIMELINE, OPEN_SOURCE } from '../consts';
     I am {SITE.name}, a {SITE.title} at iQera in Mauritius since July 2018. I hold a BSc in Information Systems
     (First Class, University of Mauritius, 2003) and ITIL V3 certification, and I speak English and French.
   </p>
-  <h2 class="label">timeline</h2>
+  <h2 class="label" style="margin-top:3rem">timeline</h2>
   <p>Full history on <a href={SITE.linkedin} rel="me noopener">LinkedIn</a>.</p>
-  <ul>
-    {TIMELINE.map((t) => <li><strong>{t.period}</strong>: {t.role}, {t.org}</li>)}
-  </ul>
-  <h2 class="label">open-source</h2>
-  <ul>
+  <ol class="timeline">
+    {TIMELINE.map((t) => <li><span class="period">{t.period}</span><span><span class="role">{t.role}</span> <span class="org">· {t.org}</span></span></li>)}
+  </ol>
+  <h2 class="label" style="margin-top:3rem">open-source</h2>
+  <ul class="rows">
     {OPEN_SOURCE.map((o) => <li><a href={o.url} rel="noopener">{o.title}</a></li>)}
   </ul>
 </Base>

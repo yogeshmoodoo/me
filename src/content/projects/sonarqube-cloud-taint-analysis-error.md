@@ -4,6 +4,7 @@ summary: Reported a SonarQube Cloud failure during taint analysis; SonarSource d
 stack: [SonarQube Cloud, Maven, Java 17]
 role: Reporter
 featured: true
+status: fixed
 links:
   - label: Thread on the SonarSource community forum
     url: https://community.sonarsource.com/t/taint-analysis-was-interrupted-because-of-an-unexpected-error/144917

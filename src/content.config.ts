@@ -10,6 +10,7 @@ const projects = defineCollection({
     stack: z.array(z.string()),
     role: z.string(),
     featured: z.boolean().default(false),
+    status: z.enum(['open', 'fixed']).optional(),
     links: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
   }),
 });

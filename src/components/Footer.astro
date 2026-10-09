@@ -10,6 +10,10 @@ import { SITE } from '../consts';
   </div>
 </footer>
 <style>
-  footer { border-top: 1px solid var(--border); padding: 1.5rem 0; color: var(--muted); font-size: .9rem; }
+  footer { border-top: 1px solid var(--border); padding: 1.75rem 0; color: var(--muted); font-size: .9rem; }
+  footer a { color: var(--text); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  .container > span { margin-right: auto; }
+  @media (max-width: 30rem) { .container > span { flex-basis: 100%; } }
   .container { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
 </style>

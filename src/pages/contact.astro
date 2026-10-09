@@ -4,9 +4,9 @@ import { SITE } from '../consts';
 ---
 <Base title="Contact" description="Contact Yogesh Moodoo, Senior Technical Architect in Mauritius, by email, LinkedIn or GitHub.">
   <h1 class="label">contact yogesh moodoo</h1>
-  <ul>
-    <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
-    <li>LinkedIn: <a href={SITE.linkedin} rel="me noopener">yogesh-moodoo</a></li>
-    <li>GitHub: <a href={SITE.github} rel="me noopener">yogeshmoodoo</a></li>
-  </ul>
+  <div class="grid">
+    <article class="card"><a class="tile" href={`mailto:${SITE.email}`}><span class="k">email</span><span class="v">{SITE.email}</span></a></article>
+    <article class="card"><a class="tile" href={SITE.linkedin} rel="me noopener"><span class="k">linkedin</span><span class="v">yogesh-moodoo</span></a></article>
+    <article class="card"><a class="tile" href={SITE.github} rel="me noopener"><span class="k">github</span><span class="v">yogeshmoodoo</span></a></article>
+  </div>
 </Base>

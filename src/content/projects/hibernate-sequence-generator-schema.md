@@ -4,6 +4,7 @@ summary: Reported a Hibernate bug where the schema attribute of @SequenceGenerat
 stack: [Hibernate 5.0.12, PostgreSQL 9.6, Spring Boot 1.5.4]
 role: Reporter
 featured: true
+status: open
 links:
   - label: HHH-11954 on Hibernate Jira
     url: https://hibernate.atlassian.net/browse/HHH-11954
